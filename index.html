@@ -1,6 +1,6 @@
-Para los negocios de **Villa Bosch**, he diseñado una plantilla moderna, profesional y adaptable (responsive). Esta estructura es ideal para una pizzería, ferretería o cualquier comercio local que quiera destacar en el barrio.
+Para este ejemplo, he creado una estructura moderna, profesional y adaptable (responsive) diseñada específicamente para un negocio local en Villa Bosch (por ejemplo, una cafetería, una tienda de ropa o un servicio técnico). 
 
-El diseño incluye una sección hero, una cuadrícula de servicios/productos y un formulario de contacto, todo integrado en un solo archivo.
+El diseño incluye una paleta de colores profesional, una sección de "héroe", servicios y contacto.
 
 ```html
 <!DOCTYPE html>
@@ -8,117 +8,70 @@ El diseño incluye una sección hero, una cuadrícula de servicios/productos y u
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Negocio Local | Villa Bosch</title>
+    <title>Tu Negocio | Villa Bosch</title>
     <style>
-        /* Estilos CSS Integrados */
-        :root {
-            --primary: #d32f2f; /* Rojo institucional */
-            --dark: #212121;
-            --light: #f5f5f5;
-        }
+        /* Reset y estilos generales */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+        body { line-height: 1.6; color: #333; background-color: #f4f4f4; }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        header {
-            background: var(--dark);
+        /* Navbar */
+        nav { background: #2c3e50; color: white; padding: 1rem; text-align: center; }
+        
+        /* Hero Section */
+        .hero { 
+            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
             color: white;
-            padding: 1rem 0;
+            padding: 100px 20px;
             text-align: center;
         }
+        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
 
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px;
-        }
+        /* Contenedor principal */
+        .container { max-width: 900px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; }
 
-        .hero {
-            background: #e0e0e0;
-            padding: 50px 20px;
-            text-align: center;
+        /* Estilo de botones */
+        .btn { 
+            display: inline-block; background: #e67e22; color: white; padding: 10px 20px; 
+            text-decoration: none; border-radius: 5px; margin-top: 15px; 
         }
+        .btn:hover { background: #d35400; }
 
-        .btn {
-            background: var(--primary);
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin-top: 20px;
-        }
-
-        .card {
-            border: 1px solid #ddd;
-            padding: 15px;
-            border-radius: 8px;
-            text-align: center;
-        }
-
-        footer {
-            background: var(--dark);
-            color: white;
-            text-align: center;
-            padding: 10px;
-            margin-top: 20px;
-        }
+        /* Footer */
+        footer { text-align: center; padding: 20px; background: #2c3e50; color: white; margin-top: 20px; }
 
         /* Responsive */
-        @media (max-width: 768px) {
-            .container { width: 95%; }
-        }
+        @media (max-width: 600px) { .hero h1 { font-size: 1.8rem; } }
     </style>
 </head>
 <body>
 
-    <header>
-        <h1>Negocio Local - Villa Bosch</h1>
+    <nav>
+        <h2>Nombre de tu Negocio - Villa Bosch</h2>
+    </nav>
+
+    <header class="hero">
+        <h1>Calidad y atención en el corazón de Villa Bosch</h1>
+        <p>Brindamos los mejores productos para nuestros vecinos.</p>
+        <a href="#contacto" class="btn">Contactanos por WhatsApp</a>
     </header>
 
-    <section class="hero">
-        <h2>Bienvenidos a nuestro local en el corazón de Villa Bosch</h2>
-        <p>Calidad y atención personalizada a metros de la estación.</p>
-        <a href="#contacto" class="btn">Contáctanos</a>
-    </section>
+    <main class="container">
+        <section id="servicios">
+            <h2>Nuestros Servicios</h2>
+            <p>Nos especializamos en ofrecer atención personalizada a todos los clientes de la zona. Contamos con amplia trayectoria y compromiso con la comunidad de Villa Bosch.</p>
+        </section>
 
-    <div class="container">
-        <h2>Nuestros Servicios</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>Atención al Público</h3>
-                <p>Venite a visitarnos y conocé nuestras ofertas exclusivas para los vecinos.</p>
-            </div>
-            <div class="card">
-                <h3>Envío a Domicilio</h3>
-                <p>Llevamos tus productos a cualquier punto de Villa Bosch y alrededores.</p>
-            </div>
-            <div class="card">
-                <h3>Calidad Garantizada</h3>
-                <p>Trabajamos solo con primeras marcas para tu tranquilidad.</p>
-            </div>
-        </div>
-
-        <h2 id="contacto">Contacto</h2>
-        <p>Dirección: Av. José María Bosch, Villa Bosch.</p>
-        <p>Teléfono: (011) 4844-XXXX</p>
-    </div>
+        <section id="contacto" style="margin-top: 30px;">
+            <h2>Ubicación y Contacto</h2>
+            <p>📍 Dirección: Av. José María Bosch, Villa Bosch.</p>
+            <p>📞 Teléfono: (011) XXXX-XXXX</p>
+            <p>⏰ Horarios: Lunes a Sábados de 09:00 a 20:00 hs.</p>
+        </section>
+    </main>
 
     <footer>
-        <p>&copy; 2023 - Desarrollado para los comercios de Villa Bosch</p>
+        <p>&copy; 2023 Negocio Local - Villa Bosch. Todos los derechos reservados.</p>
     </footer>
 
 </body>
@@ -126,7 +79,9 @@ El diseño incluye una sección hero, una cuadrícula de servicios/productos y u
 ```
 
 ### Características de este código:
-1.  **Mobile Friendly:** La cuadrícula (`grid`) se ajusta automáticamente según el tamaño de la pantalla (celular, tablet o PC).
-2.  **Identidad Visual:** Utiliza una paleta de colores limpia y profesional.
-3.  **Fácil edición:** Solo tenés que cambiar los textos dentro de las etiquetas `<h1>`, `<h2>` y `<p>` para personalizarlo según el rubro específico del negocio (carnicería, librería, ropa, etc.).
-4.  **Optimizado:** Al tener todo en un solo archivo, carga muy rápido y es fácil de alojar en cualquier servidor gratuito (como GitHub Pages o Netlify).
+1.  **Diseño Responsive:** Se ajusta automáticamente a celulares, tablets y computadoras.
+2.  **SEO Amigable:** Estructura semántica con etiquetas `<header>`, `<main>`, `<nav>` y `<footer>`.
+3.  **Personalizable:** Solo debes cambiar el texto dentro de las etiquetas y la imagen de fondo en la sección `.hero`.
+4.  **Estilo limpio:** Utiliza una tipografía moderna y una paleta de colores profesional (Azul marino y Naranja) que transmite confianza para un negocio local.
+
+¿Necesitás que le añada alguna funcionalidad específica como un formulario de contacto o un carrusel de imágenes?
