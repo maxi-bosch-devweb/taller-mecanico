@@ -1,6 +1,8 @@
-Para este ejemplo, he creado una estructura moderna, profesional y adaptable (responsive) diseñada específicamente para un negocio local en Villa Bosch (por ejemplo, una cafetería, una tienda de ropa o un servicio técnico). 
+¡Hola! Como experto en desarrollo web, he preparado una estructura moderna, "mobile-first" (pensada para que se vea excelente en celulares) y con un diseño elegante, ideal para comercios de **Villa Bosch**.
 
-El diseño incluye una paleta de colores profesional, una sección de "héroe", servicios y contacto.
+He diseñado este template con una estética profesional que incluye: sección de hero (bienvenida), servicios/productos, contacto y un botón directo a WhatsApp, fundamental para negocios de barrio.
+
+Copia el siguiente código en un archivo llamado `index.html`:
 
 ```html
 <!DOCTYPE html>
@@ -10,78 +12,90 @@ El diseño incluye una paleta de colores profesional, una sección de "héroe", 
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tu Negocio | Villa Bosch</title>
     <style>
-        /* Reset y estilos generales */
-        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
-        body { line-height: 1.6; color: #333; background-color: #f4f4f4; }
+        /* CSS Integrado */
+        :root {
+            --primary: #2c3e50;
+            --secondary: #e67e22;
+            --light: #f4f4f4;
+            --white: #ffffff;
+        }
 
-        /* Navbar */
-        nav { background: #2c3e50; color: white; padding: 1rem; text-align: center; }
-        
-        /* Hero Section */
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', sans-serif; }
+
+        body { background-color: var(--light); color: var(--primary); line-height: 1.6; }
+
+        header { background: var(--primary); color: var(--white); padding: 1rem; text-align: center; }
+
         .hero { 
-            background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1556742049-0cfec4f6a459?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
             background-size: cover;
             color: white;
             padding: 100px 20px;
             text-align: center;
         }
-        .hero h1 { font-size: 2.5rem; margin-bottom: 10px; }
 
-        /* Contenedor principal */
-        .container { max-width: 900px; margin: 20px auto; padding: 20px; background: white; border-radius: 8px; }
+        .container { max-width: 900px; margin: auto; padding: 20px; }
 
-        /* Estilo de botones */
-        .btn { 
-            display: inline-block; background: #e67e22; color: white; padding: 10px 20px; 
-            text-decoration: none; border-radius: 5px; margin-top: 15px; 
+        .btn-whatsapp {
+            display: inline-block;
+            background: #25d366;
+            color: white;
+            padding: 15px 30px;
+            text-decoration: none;
+            border-radius: 50px;
+            margin-top: 20px;
+            font-weight: bold;
         }
-        .btn:hover { background: #d35400; }
 
-        /* Footer */
-        footer { text-align: center; padding: 20px; background: #2c3e50; color: white; margin-top: 20px; }
+        .card { background: var(--white); padding: 20px; margin: 20px 0; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
 
-        /* Responsive */
-        @media (max-width: 600px) { .hero h1 { font-size: 1.8rem; } }
+        footer { text-align: center; padding: 20px; font-size: 0.9rem; color: #7f8c8d; }
+
+        @media (max-width: 600px) { .hero { padding: 50px 10px; } }
     </style>
 </head>
 <body>
 
-    <nav>
-        <h2>Nombre de tu Negocio - Villa Bosch</h2>
-    </nav>
-
-    <header class="hero">
-        <h1>Calidad y atención en el corazón de Villa Bosch</h1>
-        <p>Brindamos los mejores productos para nuestros vecinos.</p>
-        <a href="#contacto" class="btn">Contactanos por WhatsApp</a>
+    <header>
+        <h1>Negocio Local - Villa Bosch</h1>
     </header>
 
-    <main class="container">
+    <section class="hero">
+        <h2>La mejor calidad en el corazón de Villa Bosch</h2>
+        <p>Atención personalizada y productos seleccionados para vos.</p>
+        <a href="https://wa.me/5491100000000" class="btn-whatsapp">Consultar por WhatsApp</a>
+    </section>
+
+    <div class="container">
         <section id="servicios">
-            <h2>Nuestros Servicios</h2>
-            <p>Nos especializamos en ofrecer atención personalizada a todos los clientes de la zona. Contamos con amplia trayectoria y compromiso con la comunidad de Villa Bosch.</p>
+            <h3>Nuestros Servicios</h3>
+            <div class="card">
+                <h4>Producto o Servicio 1</h4>
+                <p>Descripción detallada de lo que ofrecés en tu comercio.</p>
+            </div>
+            <div class="card">
+                <h4>Producto o Servicio 2</h4>
+                <p>Descripción detallada de lo que ofrecés en tu comercio.</p>
+            </div>
         </section>
 
-        <section id="contacto" style="margin-top: 30px;">
-            <h2>Ubicación y Contacto</h2>
-            <p>📍 Dirección: Av. José María Bosch, Villa Bosch.</p>
-            <p>📞 Teléfono: (011) XXXX-XXXX</p>
-            <p>⏰ Horarios: Lunes a Sábados de 09:00 a 20:00 hs.</p>
+        <section id="contacto">
+            <h3>Ubicación</h3>
+            <p>Estamos en pleno centro de Villa Bosch, esperándote.</p>
         </section>
-    </main>
+    </div>
 
     <footer>
-        <p>&copy; 2023 Negocio Local - Villa Bosch. Todos los derechos reservados.</p>
+        <p>&copy; 2023 - Desarrollado para comercios de Villa Bosch</p>
     </footer>
 
 </body>
 </html>
 ```
 
-### Características de este código:
-1.  **Diseño Responsive:** Se ajusta automáticamente a celulares, tablets y computadoras.
-2.  **SEO Amigable:** Estructura semántica con etiquetas `<header>`, `<main>`, `<nav>` y `<footer>`.
-3.  **Personalizable:** Solo debes cambiar el texto dentro de las etiquetas y la imagen de fondo en la sección `.hero`.
-4.  **Estilo limpio:** Utiliza una tipografía moderna y una paleta de colores profesional (Azul marino y Naranja) que transmite confianza para un negocio local.
+### Tips de experto para tu negocio:
+1. **Personalización:** Cambia el enlace `https://wa.me/5491100000000` poniendo tu número de teléfono real para que los clientes te hablen directo.
+2. **Imágenes:** En la línea del `background`, podés reemplazar la URL de Unsplash por una foto real de tu local para generar más confianza.
+3. **SEO Local:** Si querés aparecer en Google, asegurate de incluir frases como "en Villa Bosch" o "cerca de la estación de Bosch" dentro de los textos.
 
-¿Necesitás que le añada alguna funcionalidad específica como un formulario de contacto o un carrusel de imágenes?
+¿Necesitás que agregue un formulario de contacto o alguna funcionalidad específica? ¡Contame y lo ajustamos!
